@@ -4,16 +4,17 @@ import net.bytebuddy.asm.Advice;
 
 import java.lang.reflect.Method;
 
+import static java.lang.System.out;
+
 public class AnnoInterceptor {
     @Advice.OnMethodEnter
     public static void onEnter(@Advice.Origin Method method) {
 
         Anno anno = (Anno) method.getDeclaredAnnotations()[0];
-        System.out.println("This fn was written in "+ anno.value());
+        out.println("This fn was written in "+ anno.value());
 
-        if (anno.value().equals("BLOCK")) {
+        if ("BLOCK".equals(anno.value())) {
             throw new IllegalStateException("Someone said block");
         }
-
     }
 }
