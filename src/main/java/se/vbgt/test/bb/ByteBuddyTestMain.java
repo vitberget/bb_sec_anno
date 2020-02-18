@@ -24,6 +24,8 @@ public class ByteBuddyTestMain {
               .filter(c -> containsAnnoMethod(c))
               .forEach(c -> buddyClass(c));
 
+        Bar b = new Bar();
+        b.test();
 
         out.printf("2 %s%n", foo.it("nem"));
         out.printf("2 %s%n", foo.that("nem"));
