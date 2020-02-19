@@ -1,4 +1,4 @@
-package se.vbgt.test.bb;
+package se.vbgt.test.bb.domain;
 
 public class Bar {
 

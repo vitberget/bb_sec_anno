@@ -1,4 +1,4 @@
-package se.vbgt.test.bb;
+package se.vbgt.test.bb.domain;
 
 import static java.lang.System.out;
 
@@ -10,7 +10,7 @@ public class Foo {
         return "foo " + value;
     }
 
-    @Anno("BLOCK")
+    @Anno("BLOCKe")
     public String that(String value) {
         out.println("foo.that called");
         return "foot " + value;

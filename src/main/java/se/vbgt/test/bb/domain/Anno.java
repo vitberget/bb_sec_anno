@@ -1,4 +1,4 @@
-package se.vbgt.test.bb;
+package se.vbgt.test.bb.domain;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

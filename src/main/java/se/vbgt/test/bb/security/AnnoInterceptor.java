@@ -1,6 +1,7 @@
-package se.vbgt.test.bb;
+package se.vbgt.test.bb.security;
 
 import net.bytebuddy.asm.Advice;
+import se.vbgt.test.bb.domain.Anno;
 
 import java.lang.reflect.Method;
 
