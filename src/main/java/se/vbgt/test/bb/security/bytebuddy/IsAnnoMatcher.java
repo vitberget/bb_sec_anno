@@ -1,10 +1,10 @@
-package se.vbgt.test.bb.security;
+package se.vbgt.test.bb.security.bytebuddy;
 
 import net.bytebuddy.description.annotation.AnnotationDescription;
 import net.bytebuddy.description.method.MethodDescription;
 import net.bytebuddy.description.type.TypeDescription;
 import net.bytebuddy.matcher.ElementMatcher.Junction.AbstractBase;
-import se.vbgt.test.bb.domain.Anno;
+import se.vbgt.test.bb.security.Anno;
 
 import java.util.Objects;
 

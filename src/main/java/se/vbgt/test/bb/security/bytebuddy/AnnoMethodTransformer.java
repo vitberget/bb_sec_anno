@@ -1,4 +1,4 @@
-package se.vbgt.test.bb.security;
+package se.vbgt.test.bb.security.bytebuddy;
 
 import net.bytebuddy.agent.builder.AgentBuilder;
 import net.bytebuddy.agent.builder.AgentBuilder.Transformer;
@@ -8,7 +8,7 @@ import net.bytebuddy.description.type.TypeDescription;
 import net.bytebuddy.dynamic.DynamicType.Builder;
 import net.bytebuddy.matcher.ElementMatchers;
 import net.bytebuddy.utility.JavaModule;
-import se.vbgt.test.bb.domain.Anno;
+import se.vbgt.test.bb.security.Anno;
 
 import static net.bytebuddy.matcher.ElementMatchers.isAnnotatedWith;
 import static net.bytebuddy.matcher.ElementMatchers.none;
