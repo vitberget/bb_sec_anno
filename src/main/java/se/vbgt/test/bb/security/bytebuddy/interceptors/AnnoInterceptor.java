@@ -1,4 +1,4 @@
-package se.vbgt.test.bb.security.bytebuddy;
+package se.vbgt.test.bb.security.bytebuddy.interceptors;
 
 import net.bytebuddy.asm.Advice;
 import se.vbgt.test.bb.security.Anno;

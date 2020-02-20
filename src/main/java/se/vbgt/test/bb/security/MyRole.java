@@ -1,5 +1,10 @@
 package se.vbgt.test.bb.security;
 
+/**
+ * Some very special user roles
+ *
+ * ...and support for storing them on a ThreadLocal (it's here because I'm lazy)
+ */
 public enum MyRole {
     ROLE_1,
     ROLE_2,

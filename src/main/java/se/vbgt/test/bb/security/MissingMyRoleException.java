@@ -12,7 +12,6 @@ public class MissingMyRoleException extends RuntimeException {
     public MyRole[] getRequiredRoles() {
         return requiredRoles;
     }
-
     public MyRole[] getUserRoles() {
         return userRoles;
     }

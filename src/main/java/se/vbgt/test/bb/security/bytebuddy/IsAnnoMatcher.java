@@ -1,7 +1,7 @@
 package se.vbgt.test.bb.security.bytebuddy;
 
 import net.bytebuddy.description.annotation.AnnotationDescription;
-import net.bytebuddy.description.method.MethodDescription;
+import net.bytebuddy.description.method.MethodDescription.InDefinedShape;
 import net.bytebuddy.description.type.TypeDescription;
 import net.bytebuddy.matcher.ElementMatcher.Junction.AbstractBase;
 import se.vbgt.test.bb.security.Anno;
@@ -15,22 +15,17 @@ public class IsAnnoMatcher<V extends TypeDescription> extends AbstractBase<V> {
         return typeDefinitions.getDeclaredMethods()
                               .stream()
                               .anyMatch(o -> isAnnoAnnotatedMethod(o));
-
     }
 
-    private boolean isAnnoAnnotatedMethod(Object declaredMethod) {
-        if (declaredMethod instanceof MethodDescription) {
-            MethodDescription methodDescription = (MethodDescription) declaredMethod;
-            return methodDescription.getDeclaredAnnotations()
-                                    .stream()
-                                    .anyMatch(a -> isAnnoAnnotation(a));
-        }
-        return false;
+    private boolean isAnnoAnnotatedMethod(InDefinedShape shape) {
+        return shape.getDeclaredAnnotations()
+                    .stream()
+                    .anyMatch(a -> isAnnoAnnotation(a));
     }
 
-    private static boolean isAnnoAnnotation(AnnotationDescription a) {
+    private static boolean isAnnoAnnotation(AnnotationDescription annotation) {
         return Objects.equals(
-            a.getAnnotationType().getName(),
+            annotation.getAnnotationType().getName(),
             Anno.class.getName());
     }
 }
