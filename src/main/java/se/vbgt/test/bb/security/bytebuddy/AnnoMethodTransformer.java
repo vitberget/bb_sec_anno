@@ -10,7 +10,6 @@ import net.bytebuddy.matcher.ElementMatchers;
 import net.bytebuddy.utility.JavaModule;
 import se.vbgt.test.bb.security.Anno;
 
-import static net.bytebuddy.matcher.ElementMatchers.isAnnotatedWith;
 import static net.bytebuddy.matcher.ElementMatchers.none;
 
 public class AnnoMethodTransformer implements Transformer {
@@ -24,8 +23,7 @@ public class AnnoMethodTransformer implements Transformer {
                                 TypeDescription typeDescription,
                                 ClassLoader classLoader,
                                 JavaModule javaModule) {
-        System.out.println("transformers unite");
-
+        System.out.println("Transforming "+typeDescription);
         return builder.visit(advice);
     }
 

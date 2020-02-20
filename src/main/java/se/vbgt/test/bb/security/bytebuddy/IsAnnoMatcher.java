@@ -18,13 +18,12 @@ public class IsAnnoMatcher<V extends TypeDescription> extends AbstractBase<V> {
 
     }
 
-
     private boolean isAnnoAnnotatedMethod(Object declaredMethod) {
         if (declaredMethod instanceof MethodDescription) {
             MethodDescription methodDescription = (MethodDescription) declaredMethod;
             return methodDescription.getDeclaredAnnotations()
                                     .stream()
-                                           .anyMatch(a -> isAnnoAnnotation(a));
+                                    .anyMatch(a -> isAnnoAnnotation(a));
         }
         return false;
     }

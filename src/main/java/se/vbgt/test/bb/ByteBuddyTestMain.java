@@ -14,9 +14,9 @@ public class ByteBuddyTestMain {
         ByteBuddyAgent.install();
         injectTransformer();
 
-        // MyRole.setOnThread(ROLE_2);
+        MyRole.setOnThread(ROLE_2);
         // MyRole.setOnThread(ROLE_2, ROLE_3);
-        MyRole.setOnThread(ROLE_1, ROLE_2, ROLE_3);
+        // MyRole.setOnThread(ROLE_1, ROLE_2, ROLE_3);
 
         Foo foo = new Foo();
         out.printf("1 %s%n", foo.it("muh"));
