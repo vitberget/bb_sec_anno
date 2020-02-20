@@ -8,6 +8,8 @@ import se.vbgt.test.bb.security.MyRole;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
+import static java.util.Optional.ofNullable;
+
 public class AnnoInterceptor {
     @Advice.OnMethodEnter
     public static void onEnter(@Advice.Origin Method method) {
@@ -24,7 +26,7 @@ public class AnnoInterceptor {
 
         if (anno != null) {
             MyRole[] requiredRoles = anno.value();
-            MyRole[] userRoles = MyRole.getFromThread();
+            MyRole[] userRoles = ofNullable(MyRole.getFromThread()).orElse(new MyRole[]{});
 
             for (MyRole req : requiredRoles) {
                 boolean reqFullfilled = false;
